@@ -24,12 +24,11 @@
 
 </head>
 
-<body>
+<body style="position: relative;">
   <!-- Header -->
   <header class="header">
     <nav class="navbar">
-      <img src="images/vl-logo-1.1.webp" alt="">
-
+      <img src="images/vl-logo-1.1.webp" alt="Logo">
       <ul class="nav-links" id="navLinks">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="About.html">About Us</a></li>
@@ -39,8 +38,8 @@
         <li><a href="#Blogs">Blogs</a></li>
       </ul>
       <div class="started">
-        <button class="started-btn ">Get Started <span class="btn-span"><i class="bi bi-arrow-up-right"></i> </span>
-        </button>
+        <button class="started-btn"><a href="contact.html">Get Started</a> <span class="btn-span"><i
+              class="bi bi-arrow-up-right"></i></span></button>
       </div>
       <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
         <i class="bi bi-list"></i>
@@ -95,19 +94,19 @@
       </div>
 
       <div class="shapes">
-                    <div class="shape1">
-                        <img src="images/tick.svg" alt="" srcset="">
-                    </div>
-                    <div class="shape2">
-                        <img src="images/icon-arrow.svg" alt="" srcset="">
-                    </div>
-                    <div class="shape3">
-                        <img src="images/icon-arrow.svg" alt="" srcset="">
-                    </div>
-                </div>
-                <div class="fan">
-                    <img src="images/fan.svg" alt="" srcset="">
-                </div>
+        <div class="shape1">
+          <img src="images/tick.svg" alt="" srcset="">
+        </div>
+        <div class="shape2">
+          <img src="images/emoji-4.2.svg" alt="" srcset="">
+        </div>
+        <div class="shape3">
+          <img src="images/icon-arrow.svg" alt="" srcset="">
+        </div>
+      </div>
+      <div class="fan">
+        <img src="images/fan.svg" alt="" srcset="">
+      </div>
       <div class="hero-img">
         <img src="images/vl-hero-4.1.webp" alt="">
 
@@ -300,23 +299,83 @@
       </div>
 
       <div class="owl-carousel three-cards">
-        <div class="case-card">
-          <img src="images/case1.webp" alt="">
-          <button class="case-button">Seamless cloud migration</button>
-        </div>
-        <div class="case-card">
-          <img src="images/case2.webp" alt="">
-          <button class="case-button">Building resiliant Networks</button>
 
-        </div>
         <div class="case-card">
-          <img src="images/case3.webp" alt="">
+          <div class="case-image-wrapper">
+            <img src="images/case1.webp" alt="">
+
+            <div class="card-overlay">
+              <div class="overlay-content">
+                <div class="hexagon-bg">
+                  <span class="arrow-icon">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </span>
+                </div>
+                <p class="read-more-text">Read More</p>
+              </div>
+            </div>
+          </div>
+
           <button class="case-button">Seamless cloud migration</button>
         </div>
+
         <div class="case-card">
-          <img src="images/case3.webp" alt="">
+          <div class="case-image-wrapper">
+            <img src="images/case2.webp" alt="">
+
+            <div class="card-overlay">
+              <div class="overlay-content">
+                <div class="hexagon-bg">
+                  <span class="arrow-icon">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </span>
+                </div>
+                <p class="read-more-text">Read More</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="case-button">Building resiliant Networks</button>
+        </div>
+
+        <div class="case-card">
+          <div class="case-image-wrapper">
+            <img src="images/case3.webp" alt="">
+
+            <div class="card-overlay">
+              <div class="overlay-content">
+                <div class="hexagon-bg">
+                  <span class="arrow-icon">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </span>
+                </div>
+                <p class="read-more-text">Read More</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="case-button">Seamless cloud migration</button>
+        </div>
+
+        <div class="case-card">
+          <div class="case-image-wrapper">
+            <img src="images/case3.webp" alt="">
+
+            <div class="card-overlay">
+              <div class="overlay-content">
+                <div class="hexagon-bg">
+                  <span class="arrow-icon">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </span>
+                </div>
+                <p class="read-more-text">Read More</p>
+              </div>
+            </div>
+          </div>
+
           <button class="case-button">Efficiency Managed IT Services</button>
         </div>
+
       </div>
     </section>
 
@@ -324,7 +383,7 @@
     <section class="section-test">
       <div class="sec-left">
         <span>Testimonial</span>
-        <h1>Our Success is a Measured by Are Satisfaction</h1>
+        <h1>Our Success is a Measured <br> by Are Satisfaction</h1>
         <p>Their success is the greatest reflection <br>
           of our commitment to excellence.</p>
         <button>Read More Reviews <span class="sec-left-"><i class="bi bi-arrow-up-right"></i>
@@ -401,7 +460,7 @@
             <li><i class="bi bi-check"></i>Market Growth Solution</li>
             <li><i class="bi bi-check"></i>Digital Product Design</li>
           </ul>
-          <button class="about-btn">
+          <button class="price-btn">
             choose a Plan
 
             <span class="abt-btn-span"><i class="bi bi-arrow-up-right"></i>
@@ -448,7 +507,7 @@
             <li><i class="bi bi-check"></i>Market Growth Solution</li>
             <li><i class="bi bi-check"></i>Digital Product Design</li>
           </ul>
-          <button class="about-btn">
+          <button class="price-btn">
             choose a Plan
 
             <span class="abt-btn-span"><i class="bi bi-arrow-up-right"></i>
@@ -576,88 +635,111 @@
     </section>
 
     <!--Footer-->
-    <footer class="sec-footer">
-      <div class="main-footer">
-        <div class="footer-title">
-          <h1>Transform Your Business <br> Contact Us Today</h1>
-          <form>
-            <input type="Email" placeholder="Email Address" class="footer-form">
-            <button class="footer-btn">Subscribe Now <span><i class="bi bi-arrow-up-right"></i></span></button>
-          </form>
+       <section class="last-section">
+
+    <div class="footer-cta-banner-left">
+      <div class="cta-text">
+        <h2>Transform Your Business <br> Contact Us Today</h2>
+      </div>
+      <div class="cta-form">
+        <input type="email" name="email" id="" placeholder="Email Address">
+        <div class="subscribeBtn">
+          <button type="submit" class="contact hero-btn subscribe">SUBSCRIBE NOW
+            <span><i class="bi bi-arrow-right"></i></span></button>
         </div>
-        <div class="shapes">
+      </div>
+    </div>
+
+    <div class="footer-cta-banner-right">
+      <div class="shapes">
         <div class="shape3 sh">
-          <img src="images/icon-arrow.svg">
+          <img src="./assets/emoji-4.3.svg">
         </div>
       </div>
-        <img src="images/footerimg.webp" alt="">
+
+      <img src="./assets/black-person-i,g.webp" alt="" srcset="">
+    </div>
+  </section>
+
+  <footer class="site-footer">
+
+    <div class="footer-col brand-col">
+      <div class="footer-logo">
+        <img src="images/vl-logo-1.webp" alt="" srcset="">
       </div>
-
-      <div class="footer-grid">
-        <div class="logo-footer">
-          <img src="images/vl-footer-logo-4.2.webp" alt="">
-          <p>We foster a culture of teamwork &
-            creative problem-solving to deliver
-            exceptional results for our clients.</p>
-          <div class="footer-social-icons">
-            <i class="bi bi-facebook"></i>
-            <i class="bi bi-linkedin"></i>
-            <i class="bi bi-instagram"></i>
-            <i class="bi bi-youtube"></i>
-          </div>
-        </div>
-
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Service</a></li>
-            <li><a href="#">Case Study</a></li>
-            <li><a href="#">Testimonial</a></li>
-          </ul>
-        </div>
-
-        <div class=" footer-links">
-          <h3>Our Services</h3>
-          <ul>
-            <li><a href="#">Cyber Security</a></li>
-            <li><a href="#">Network Analysis</a></li>
-            <li><a href="#">Data Recovery</a></li>
-            <li><a href="#">It Services</a></li>
-          </ul>
-        </div>
-
-        <div class="gallery-title">
-          <h3>Instagram Posts</h3>
-
-          <div class="footer-image-grid">
-            <img src="images/footer1.webp" alt="">
-            <img src="images/footer2.webp" alt="">
-            <img src="images/footer3.webp" alt="">
-            <img src="images/footer4.webp" alt="">
-            <img src="images/footer5.webp" alt="">
-            <img src="images/footer6.webp" alt="">
-          </div>
-        </div>
-
+      <p>We foster a culture of teamwork &
+        creative problem-solving to deliver
+        exceptional results for our clients.</p>
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
       </div>
+    </div>
+    <div class="footer-col links-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Service</a></li>
+        <li><a href="#">Case Study</a></li>
+        <li><a href="#">Testimonial</a></li>
+      </ul>
+    </div>
 
-      <hr style="color: black; opacity: 0.5; ">
-        
-        <div class="footer-copyright">
-          <p>Copyright ©2024 O-Tech. All Rights Reserved</p>
+    <div class="footer-col links-col">
+      <h3>Our Service</h3>
+      <ul>
+        <li><a href="#">Cyber Security</a></li>
+        <li><a href="#">Network Analysis</a></li>
+        <li><a href="#">Data Recovery</a></li>
+        <li><a href="#">It Service</a></li>
+      </ul>
+    </div>
 
-              <span>Terms & Conditions  |  Privacy Policy</span>
+    <div class="footer-col insta-col">
+      <h3>Instagram Post</h3>
+      <div class="insta-grid">
+        <div class="insta-item"><img src="assets/ins-1.webp" alt="Post 1"></div>
+        <div class="insta-item"><img src="./assets/ins-2.webp" alt="Post 2"></div>
+        <div class="insta-item"><img src="./assets/ins-3.webp" alt="Post 3"></div>
+        <div class="insta-item"><img src="./assets/ins-4.webp" alt="Post 4"></div>
+        <div class="insta-item"><img src="./assets/ins-5.webp" alt="Post 5"></div>
+        <div class="insta-item"><img src="./assets/ins-6.webp" alt="Post 6"></div>
+      </div>
+    </div>
+  </footer>
 
-          
-        </div>
 
-    </footer>
+  <footer class="bottom-footer">
+    <div class="bottom-footer-container">
+      <p>Copyright ©2024 O-Tech. All Rights Reserved</p>
+      <span>Terms & Conditions | Privacy Policy</span>
+    </div>
+  </footer>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', isOpen);
+      menuBtn.querySelector('i').className = isOpen ? 'bi bi-x' : 'bi bi-list';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', false);
+        menuBtn.querySelector('i').className = 'bi bi-list';
+      });
+    });
+  </script>
 </body>
 
 </html>

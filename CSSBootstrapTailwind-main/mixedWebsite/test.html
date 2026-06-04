@@ -1,145 +1,1235 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Services</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-          <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            font-family: "Figtree", sans-serif;
+            color: white;
+            line-height: 26px;
+            font-weight: 500;
+            overflow-x: hidden;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            width: 90%;
+            max-width: 1400px;
+            position: fixed;
+            top: 20px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            border-radius: 8px;
+            background-color: #5032b7;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            padding: 10px 16px;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav img {
+            height: 40px;
+            width: auto;
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: nowrap;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: white;
+            opacity: 0.85;
+        }
+
+        .started {
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .started-btn {
+            background-color: white;
+            color: #3b1baa;
+            padding: 8px 8px 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn-span {
+            background: linear-gradient(90deg, rgb(235, 232, 246) 0%, rgb(240, 239, 253) 100%);
+            height: 36px;
+            width: 36px;
+            display: inline-block;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 50px;
+            font-size: 20px;
+            margin-left: 6px;
+        }
+
+        .menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        /* --- BUTTON HOVER EFFECTS --- */
+        .started-btn,
+        .cons-btn,
+        .about-btn,
+        .price-btn,
+        .price-middle-card-btn,
+        .sec-left button,
+        .footer-btn {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .started-btn::before,
+        .cons-btn::before,
+        .about-btn::before,
+        .price-btn::before,
+        .price-middle-card-btn::before,
+        .sec-left button::before,
+        .footer-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0%;
+            height: 100%;
+            background: #4f46e5;
+            transition: 0.4s ease;
+            z-index: -1;
+            transform: translateX(-50%);
+        }
+
+        .started-btn:hover::before,
+        .cons-btn:hover::before,
+        .about-btn:hover::before,
+        .price-btn:hover::before,
+        .price-middle-card-btn:hover::before,
+        .sec-left button:hover::before,
+        .footer-btn:hover::before {
+            width: 120%;
+        }
+
+        .started-btn:hover,
+        .cons-btn:hover,
+        .about-btn:hover,
+        .price-btn:hover,
+        .price-middle-card-btn:hover,
+        .sec-left button:hover,
+        .footer-btn:hover {
+            color: white;
+        }
+
+
+        @media (max-width: 1024px) {
+            header {
+                width: 94%;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+        }
+
+        /* Tablets — hide links, show hamburger */
+        @media (max-width: 768px) {
+            header {
+                width: 94%;
+                top: 12px;
+                margin-left: 5px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                position: absolute;
+                top: calc(100% + 8px);
+                left: 0;
+                right: 0;
+                background-color: #5032b7;
+                border-radius: 8px;
+                padding: 12px 0;
+                z-index: 99;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px 24px;
+                font-size: 15px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-links li:last-child a {
+                border-bottom: none;
+            }
+
+            .started {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            header {
+                width: 96%;
+                top: 10px;
+                border-radius: 6px;
+                margin-right: -500px;
+            }
+
+            nav {
+                padding: 8px 12px;
+            }
+
+            nav img {
+                height: 34px;
+            }
+
+            .menu-btn {
+                font-size: 1.7rem;
+            }
+        }
+
+
+        .section-services {
+  background-color: #f4f5f8;
+  color: black;
+  padding-top: 100px;
+  margin-top: 0;
+  padding-left: min(100px, 6%);
+  padding-right: min(100px, 6%);
+}
+
+.sec-title {
+  text-align: center;
+}
+
+.sec-title span {
+  padding: 12px 12px;
+  background-color: #eae9f3;
+  color: #3b1baa;
+  text-transform: uppercase;
+  border-radius: 50px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.sec-title h1 {
+  font-size: clamp(24px, 4vw, 44px);
+  line-height: clamp(32px, 5vw, 52px);
+  margin: 0;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  padding-bottom: 100px;
+}
+
+.service-card {
+  background: #ffffff;
+  padding: 32px 24px;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 420px;
+  min-height: 320px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.service-card:hover::before {
+  left: 0;
+}
+
+.service-card:hover {
+  color: white;
+}
+
+.service-card:hover h3,
+.service-card:hover p {
+  color: white;
+}
+
+.service-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50px;
+  background: #e0e7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.service-card p {
+  color: #6b7280;
+  line-height: 1.75rem;
+  font-size: 18px;
+  padding-bottom: 24px;
+}
+
+.service-btn {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .service-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .service-card {
+    padding: 24px 18px;
+    min-height: 280px;
+  }
+
+  .service-card p {
+    font-size: 16px;
+  }
+
+  .service-btn {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-services {
+    padding-top: 70px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .service-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    padding-bottom: 70px;
+  }
+
+  .service-card {
+    max-width: 100%;
+    min-height: 260px;
+    padding: 28px 22px;
+  }
+}
+
+@media (max-width: 540px) {
+  .section-services {
+    padding-top: 50px;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .sec-title h1 br {
+    display: none;
+  }
+
+  .service-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-bottom: 50px;
+  }
+
+  .service-card {
+    min-height: unset;
+    padding: 24px 20px;
+  }
+
+  .service-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .service-card p {
+    font-size: 15px;
+    padding-bottom: 16px;
+  }
+
+  .service-btn {
+    font-size: 15px;
+  }
+}
+
+        .partnership-section {
+            padding-top: 80px;
+            padding-bottom: 140px;
+            position: relative;
+            font-family: 'Figtree', sans-serif;
+
+            background-color: #f4f5f8;
+
+        }
+
+        .custom-layout-container {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+        }
+
+        .image-cluster {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .tall-img {
+            width: 60%;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .short-img {
+            width: 40%;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .content-right-block {
+            max-width: 400px;
+            margin-bottom: 120px;
+        }
+
+        .floating-stats-card {
+            position: absolute;
+            bottom: 87px;
+            left: 36.5%;
+            width: 63.5%;
+            background: #ffffff;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            z-index: 10;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111111;
+            line-height: 1.1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666666;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+
+        .sec-footer {
+            background-color: white;
+            padding-top: 100px;
+        }
+
+        .main-footer {
+            margin: auto;
+            padding: 70px min(100px, 8%) 0 min(70px, 6%);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            overflow-y: hidden;
+            position: relative;
+            width: 80%;
+            max-width: 1400px;
+            min-height: 345px;
+            background: url(images/vl-hero-bg-4.1.webp);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            bottom: clamp(50px, 12vw, 150px);
+            border-radius: 8px;
+        }
+
+        .footer-title h1 {
+            font-size: clamp(26px, 4.5vw, 48px);
+            line-height: clamp(34px, 5.5vw, 58px);
+            padding-bottom: 32px;
+        }
+
+        .footer-form {
+            border-radius: 50px;
+            width: 100%;
+            height: 56px;
+            background-color: white;
+            color: black;
+            padding-left: 26px;
+            padding-right: 26px;
+            font-size: 14px;
+            line-height: 48px;
+            outline: none;
+            position: relative;
+        }
+
+        .footer-btn {
+            position: relative;
+            bottom: 55px;
+            left: clamp(120px, 25vw, 325px);
+            color: black;
+            background-color: #5340ce;
+            height: 53px;
+            width: 40%;
+            max-width: 200px;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+
+        .footer-btn span {
+            background-color: #edeaf8;
+            height: 36px;
+            width: 36px;
+            color: #6c63ee;
+            font-weight: bolder;
+            display: inline-block;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 50px;
+            margin-left: 6px;
+        }
+
+        .shape3.sh {
+            position: absolute;
+            right: 35%;
+            top: 20%;
+            z-index: 1;
+            animation: vlbounce 5s linear infinite;
+        }
+
+        @keyframes vlbounce {
+            0% {
+                transform: translateY(-20%);
+            }
+
+            50% {
+                transform: translateY(20%);
+            }
+
+            100% {
+                transform: translateY(-20%);
+            }
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+            padding-left: min(150px, 10%);
+            padding-right: min(100px, 6%);
+            position: relative;
+            bottom: clamp(30px, 8vw, 100px);
+        }
+
+        .logo-footer {
+            color: black;
+        }
+
+        .logo-footer p {
+            padding-top: 16px;
+            font-size: 18px;
+            line-height: 26px;
+            opacity: 0.8;
+            padding-bottom: 32px;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 15px;
+            color: #4d36c6;
+        }
+
+        .footer-social-icons i {
+            background-color: #edeaf8;
+            height: 36px;
+            width: 36px;
+            color: #6c63ee;
+            font-weight: bolder;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 50px;
+        }
+
+        .footer-social-icons i:hover {
+            background-color: #4d36c6;
+            color: white;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            color: black;
+            margin-left: min(40px, 4vw);
+        }
+
+        .footer-links h3 {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 600;
+        }
+
+        .footer-links a {
+            font-size: 18px;
+            line-height: 24px;
+            opacity: 0.8;
+        }
+
+        .footer-links li {
+            margin-top: 12px;
+        }
+
+        .footer-image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .footer-image-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .gallery-title {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 600;
+            color: black;
+        }
+
+        .footer-copyright {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            color: black;
+            margin-left: min(50px, 4vw);
+            padding-right: min(100px, 8%);
+            min-height: 70px;
+            padding-top: 30px;
+        }
+
+        .footer-copyright p {
+            font-size: 16px;
+            line-height: 26px;
+            opacity: 0.8;
+        }
+
+        .footer-copyright span {
+            font-size: 16px;
+            line-height: 26px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 991.98px) {
+            .floating-stats-card {
+                position: relative !important;
+                left: 0 !important;
+                width: 100% !important;
+                margin-top: 40px;
+                bottom: 0 !important;
+            }
+
+            .content-right-block {
+                margin-bottom: 0px;
+                max-width: 100%;
+            }
+
+            .tall-img {
+                height: 380px;
+            }
+
+            .short-img {
+                height: 260px;
+            }
+
+            .partnership-section {
+                padding-bottom: 60px;
+            }
+        }
+    </style>
 </head>
 
-<body>
-
-    <section class="pt-20 pb-[140px] relative bg-[#f4f5f8] font-['Figtree']">
-    <div class="max-w-[1280px] w-full mx-auto px-6 relative">
-
-        <!-- Heading -->
-        <div class="mb-20">
-            <div class="w-full">
-                <span
-                    class="inline-block mb-3 px-3 py-2 uppercase font-bold bg-[#ede9fe] text-[#5046e5] rounded-[30px] text-[1rem] tracking-[0.5px]">
-                    Why Choose Us
-                </span>
-
-                <h2 class="font-bold text-[#111111] mb-0 text-[2.5rem] leading-[1.3] tracking-[-0.5px]">
-                    We Don't Just Deliver Solutions <br>
-                    We Build Partnerships
-                </h2>
+<body style="position: relative;">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <img src="images/vl-logo-1.1.webp" alt="Logo">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="#Pages">Pages</a></li>
+                <li><a href="#Case Studies">Case Studies</a></li>
+                <li><a href="#Blogs">Blogs</a></li>
+            </ul>
+            <div class="started">
+                <button class="started-btn"><a href="contact.html">Get Started</a> <span class="btn-span"><i
+                            class="bi bi-arrow-up-right"></i></span></button>
             </div>
-        </div>
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="bi bi-list"></i>
+            </button>
+        </nav>
+    </header>
 
-        <!-- Content -->
-        <div class="flex flex-col lg:flex-row items-start justify-between">
+    <section
+        class="relative w-full h-[320px] md:h-[380px] lg:h-[420px] bg-[#340fa0] bg-[url('images/vl-hero-bg-4.1.webp')] bg-cover bg-center bg-no-repeat flex items-center pt-32 overflow-hidden text-white font-['Figtree'] mt-[-20px]">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#2c0b93]/90 via-[#3a13b4]/60 to-transparent z-0"></div>
 
-            <!-- Images -->
-            <div class="w-full lg:w-[66.666667%] lg:pr-4 mb-4 lg:mb-0">
-                <div class="flex gap-6 items-start w-full">
-
-                    <img src="./assets/vl-about-choose-1.webp"
-                        alt="Workspace Team"
-                        class="w-[60%] h-[550px] object-cover rounded-lg lg:h-[550px] max-lg:h-[380px]">
-
-                    <img src="./assets/vl-about-choose-2.webp"
-                        alt="Mobile Analysis"
-                        class="w-[40%] h-[340px] object-cover rounded-lg lg:h-[340px] max-lg:h-[260px]">
-                </div>
-            </div>
-
-            <!-- Right Content -->
-            <div class="w-full lg:w-[33.333333%] lg:pl-4">
-                <div class="max-w-[400px] mb-[120px] lg:mb-[120px] max-lg:max-w-full max-lg:mb-0">
-
-                    <p class="mb-4 leading-[28px] text-[18px] text-[#5f6168]">
-                        We understand that every business is unique,<br>
-                        is why we offer customized IT solutions that<br>
-                        fit your needs perfectly. Our approach rooted <br>
-                        in collaboration and innovation, ensuring you <br>
-                        receive the best tools and strategies.
-                    </p>
-
-                    <a href="#"
-                        class="inline-flex items-center gap-2 text-white font-bold px-4 py-[10px] rounded-full text-[1rem] tracking-[0.5px] bg-[#5046e5] shadow-[0_4px_14px_rgba(80,70,229,0.25)]">
-
-                        LEARN MORE
-
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            width="14"
-                            height="14"
-                            fill="currentColor"
-                            viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
-                        </svg>
-                    </a>
-
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Stats Card -->
         <div
-            class="absolute bottom-[87px] left-[36.5%] w-[63.5%] bg-white shadow-[0_15px_45px_rgba(0,0,0,0.05)] rounded-xl z-10
-            max-lg:relative max-lg:left-0 max-lg:w-full max-lg:mt-10 max-lg:bottom-0">
+            class="relative z-10 w-[90%] lg:w-[85%] max-w-[1440px] h-full mx-auto flex flex-row justify-between items-center">
+            <div class="w-1/2 space-y-3 pb-6 md:pb-10">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+                    Our Services
+                </h1>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 text-center py-6">
+                <div class="flex items-center gap-1.5 text-sm md:text-base font-bold">
+                    <a href="#home" class="opacity-80 hover:opacity-100 transition-opacity text-white">Home</a>
+                    <span class="opacity-60 text-xs text-white/70">&#x276F;</span>
+                    <span class="text-white">Our Services</span>
+                </div>
+            </div>
 
-                <div class="border-r border-gray-200">
-                    <div class="text-[2.5rem] font-bold text-[#111111] leading-[1.1]">
-                        <span class="counter" data-target="90">0</span>k
-                    </div>
-                    <div class="text-[0.85rem] text-[#666666] font-medium mt-1">
-                        Happy Client
+            <div class="w-1/2 h-full relative flex justify-center items-end">
+                <div class="absolute lg:left-[40px] top-[45%] w-10 sm:w-14 lg:w-16 animate-[bounce_4s_infinite]">
+                    <img src="images/icon-arrow.svg" alt="Target" class="w-full h-auto object-contain drop-shadow-md" />
+                </div>
+
+                <div
+                    class="absolute top-[15px] right-[15%] w-[85%] sm:w-[70%] md:w-[65%] lg:w-[55%] max-w-[340px] z-10">
+                    <img src="images/vl-hero-4.1.webp" alt="VR Character"
+                        class="w-full h-auto object-contain block align-bottom" />
+                </div>
+
+                <div
+                    class="absolute right-[-10px] lg:right-[20px] top-[55%] sm:w-14 lg:w-16 animate-[bounce_5s_infinite_1s] z-20 rotate-12">
+                    <img src="images/tick.svg" alt="Megaphone" class="w-full h-auto object-contain drop-shadow-md" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-services">
+        <div class="sec-title">
+            <span>our Services</span>
+            <h1>Empowering Growth with <br> Smart IT Services</h1>
+        </div>
+
+        <div class="service-cards">
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="images/1.svg" alt="">
+                </div>
+                <h3>Cloud Computing Solutions</h3>
+                <p>
+                    Leverage the power cloud to enhance
+                    scalability, flexibility, and performance
+                    Our cloud computing solutions secure.
+                </p>
+                <a href="" class="service-btn">Learn More <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="images/2.svg" alt="">
+                </div>
+                <h3>IT Infrastcture Management</h3>
+                <p>
+                    Optimize your business operations with
+                    reliable IT infrastructure management
+                    From network setup to hardware.
+                </p>
+                <a href="" class="service-btn">Learn More <i class="bi bi-arrow-up-right"></i></a>
+
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="images/3.svg" alt="">
+                </div>
+                <h3>Cybersecurity Services</h3>
+                <p>
+                    In today’s digital world, protecting your
+                    data is more critical than ever. Our Best
+                    comprehensive cybersecurity services.
+                </p>
+
+                <a href="" class="service-btn">Learn More <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="images/4.svg" alt="">
+                </div>
+                <h3>IT Consulting & Strategy</h3>
+                <p>
+                    Achieve your business goal with expert
+                    IT consulting and strategy services Our
+                    consultants work with you to identify.
+                </p>
+                <a href="" class="service-btn">Learn More <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="images/5.svg" alt="">
+                </div>
+                <h3>Managed IT Services</h3>
+                <p>
+                    Focus on your core business while we
+                    manage your IT operation our managed
+                    services include 24/7 monitoring.
+                </p>
+                <a href="" class="service-btn">Learn More <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="images/6.svg" alt="">
+                </div>
+                <h3>Network Design & Security</h3>
+                <p>
+                    Create a robust and secure network
+                    infrastructure with our design security
+                    services we develop networks that.
+                </p>
+                <a href="" class="service-btn">Learn More <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="images/4.svg" alt="">
+                </div>
+                <h3>Cloud Solutions</h3>
+                <p>
+                    Leverage the power of the cloud to
+                    streamline your operations and boost
+                    scalability our cloud solutions offer.
+                </p>
+                <a href="" class="service-btn">Learn More <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="images/4.svg" alt="">
+                </div>
+                <h3>Cybersecurity Services</h3>
+                <p>
+                    Protect your business from evolving
+                    cyber threats with our comprehensive
+                    cybersecurity solutions From threat.
+                </p>
+                <a href="" class="service-btn">Learn More <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="images/4.svg" alt="">
+                </div>
+                <h3>Software Development</h3>
+                <p>
+                    Transform your ideas into reality with
+                    our custom software development
+                    services whether you need mobile.
+
+
+                </p>
+                <a href="" class="service-btn">Learn More <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="partnership-section">
+        <div class="custom-layout-container">
+
+            <div class="row mb-5">
+                <div class="col-12">
+                    <span class="badge mb-3 px-3 py-2 text-uppercase fw-bold"
+                        style="background-color: #ede9fe; color: #5046e5; border-radius: 30px; font-size: 1rem; letter-spacing: 0.5px;">
+                        Why Choose Us
+                    </span>
+                    <h2 class="fw-bold text-dark mb-0"
+                        style="font-size: 2.5rem; line-height: 1.3; letter-spacing: -0.5px;">
+                        We Don't Just Deliver Solutions <br> We Build Partnerships
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row align-items-start justify-content-between">
+
+                <div class="col-lg-8 pe-lg-4 mb-4 mb-lg-0">
+                    <div class="image-cluster">
+                        <img src="images/vl-about-choose-1.webp" class="tall-img" alt="Workspace Team">
+                        <img src="images/vl-about-choose-2.webp" class="short-img" alt="Mobile Analysis">
                     </div>
                 </div>
 
-                <div class="border-r border-gray-200">
-                    <div class="text-[2.5rem] font-bold text-[#111111] leading-[1.1]">
-                        <span class="counter" data-target="650">0</span>+
-                    </div>
-                    <div class="text-[0.85rem] text-[#666666] font-medium mt-1">
-                        Total Projects
-                    </div>
-                </div>
+                <div class="col-lg-4 ps-lg-4">
+                    <div class="content-right-block">
+                        <p class="text-muted mb-4" style="line-height: 28px; font-size: 18px; color: #5f6168;">
+                            We understand that every business is unique,<br>is why we offer customized IT solutions
+                            that<br> fit your needs perfectly. Our approach rooted <br> in collaboration and innovation,
+                            ensuring you <br> receive the best tools and strategies.
+                        </p>
 
-                <div class="border-r border-gray-200 md:border-r">
-                    <div class="text-[2.5rem] font-bold text-[#111111] leading-[1.1]">
-                        <span class="counter" data-target="85">0</span>+
-                    </div>
-                    <div class="text-[0.85rem] text-[#666666] font-medium mt-1">
-                        Work Together
-                    </div>
-                </div>
-
-                <div>
-                    <div class="text-[2.5rem] font-bold text-[#111111] leading-[1.1]">
-                        <span class="counter" data-target="12">0</span>+
-                    </div>
-                    <div class="text-[0.85rem] text-[#666666] font-medium mt-1">
-                        Year of Experience
+                        <a href="#"
+                            class="btn rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2 text-white"
+                            style="background-color: #5046e5; font-size: 1rem; letter-spacing: 0.5px; box-shadow: 0 4px 14px rgba(80, 70, 229, 0.25);">
+                            LEARN MORE
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                                class="bi bi-arrow-up-right" viewBox="0 0 16 16"
+                                style="stroke-width: 1.5; stroke: currentColor;">
+                                <path fill-rule="evenodd"
+                                    d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
             </div>
+
+            <div class="floating-stats-card p-4">
+                <div class="row text-center py-2 g-0">
+                    <div class="col-6 col-md-3 border-end border-light-subtle">
+                        <div class="stat-number"><span class="counter" data-target="90">0</span>k</div>
+                        <div class="stat-label">Happy Client</div>
+                    </div>
+                    <div class="col-6 col-md-3 border-end border-light-subtle">
+                        <div class="stat-number"><span class="counter" data-target="650">0</span>+</div>
+                        <div class="stat-label">Total Projects</div>
+                    </div>
+                    <div class="col-6 col-md-3 border-end border-light-subtle">
+                        <div class="stat-number"><span class="counter" data-target="85">0</span>+</div>
+                        <div class="stat-label">Work Together</div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-number"><span class="counter" data-target="12">0</span>+</div>
+                        <div class="stat-label">Year of Experience</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="sec-footer">
+        <div class="main-footer">
+            <div class="footer-title">
+                <h1>Transform Your Business <br> Contact Us Today</h1>
+                <form>
+                    <input type="Email" placeholder="Email Address" class="footer-form">
+                    <button class="footer-btn">Subscribe Now <span><i class="bi bi-arrow-up-right"></i></span></button>
+                </form>
+            </div>
+            <div class="shapes">
+                <div class="shape3 sh">
+                    <img src="images/icon-arrow.svg">
+                </div>
+            </div>
+            <img src="images/footerimg.webp" alt="">
         </div>
 
-    </div>
-</section>
+        <div class="footer-grid">
+            <div class="logo-footer">
+                <img src="images/vl-footer-logo-4.2.webp" alt="">
+                <p>We foster a culture of teamwork &
+                    creative problem-solving to deliver
+                    exceptional results for our clients.</p>
+                <div class="footer-social-icons">
+                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-linkedin"></i>
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-youtube"></i>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Service</a></li>
+                    <li><a href="#">Case Study</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                </ul>
+            </div>
+
+            <div class=" footer-links">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Cyber Security</a></li>
+                    <li><a href="#">Network Analysis</a></li>
+                    <li><a href="#">Data Recovery</a></li>
+                    <li><a href="#">It Services</a></li>
+                </ul>
+            </div>
+
+            <div class="gallery-title">
+                <h3>Instagram Posts</h3>
+
+                <div class="footer-image-grid">
+                    <img src="images/footer1.webp" alt="">
+                    <img src="images/footer2.webp" alt="">
+                    <img src="images/footer3.webp" alt="">
+                    <img src="images/footer4.webp" alt="">
+                    <img src="images/footer5.webp" alt="">
+                    <img src="images/footer6.webp" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <hr style="color: black; opacity: 0.5; ">
+
+        <div class="footer-copyright">
+            <p>Copyright ©2024 O-Tech. All Rights Reserved</p>
+
+            <span>Terms & Conditions | Privacy Policy</span>
+
+
+        </div>
+
+    </footer>
 
 
 
 
-   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".about-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                dots: false,
+                navText: [
+                    `<div class="w-12 h-12 border border-gray-300 rounded-xl flex items-center justify-center">
+      <i class="fa-solid fa-arrow-left text-xl"></i>
+   </div>`,
+
+                    `<div class="w-12 h-12 border border-gray-300 rounded-xl flex items-center justify-center">
+      <i class="fa-solid fa-arrow-right text-xl"></i>
+   </div>`,
+                ],
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    600: {
+                        items: 1,
+                    },
+                    1025: {
+                        items: 1,
+                    },
+                },
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll('.counter');
+            const duration = 1000;
+
+            counters.forEach(counter => {
+                const animate = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const startTime = performance.now();
+
+                    const updateCounter = (currentTime) => {
+                        const elapsedTime = currentTime - startTime;
+                        const progress = Math.min(elapsedTime / duration, 1);
+
+                        const easeOutQuad = progress * (2 - progress);
+                        const currentValue = Math.floor(easeOutQuad * target);
+
+                        counter.innerText = currentValue;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+
+                    requestAnimationFrame(updateCounter);
+                };
+
+                animate();
+            });
+        });
+
+        tailwind.config = {
+            theme: {
+                extend: {
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        }
+                    }
+                }
+            }
+        }
+
+        $('.four-cards').owlCarousel({
+            loop: true,
+            margin: 20,
+            autoplay: true,
+            autoplayTimeout: 1300,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 2
+                },
+                1024: {
+                    items: 4
+                }
+            }
+        });
+
+        $(document).ready(function () {
+            var owl = $('.three-cards');
+
+            owl.owlCarousel({
+                center: true,
+                autoWidth: true,
+                loop: true,
+                margin: 24,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplayHoverPause: true,
+                nav: false,
+                dots: true
+            });
+
+            $('#customNextBtn').click(function () {
+                owl.trigger('next.owl.carousel');
+            });
+        });
+    </script>
 </body>
 
 </html>

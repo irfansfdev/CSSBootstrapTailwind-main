@@ -29,12 +29,16 @@
             box-sizing: border-box;
         }
 
-        body {
+        body,
+        html {
             font-family: "Figtree", sans-serif;
             color: white;
             line-height: 26px;
             font-weight: 500;
             overflow-x: hidden;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
         }
 
         a {
@@ -47,12 +51,13 @@
 
         /* --- HEADER & NAVIGATION --- */
         header {
-            width: 85% !important;
+            width: 90%;
+            max-width: 1400px;
             position: fixed;
-            margin-right: calc(-0.5 * var(--bs-gutter-x)) !important;
-            left: 100px;
-            margin-left: calc(-0.5 * var(--bs-gutter-x)) !important;
             top: 20px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
             border-radius: 8px;
             background-color: #5032b7;
             backdrop-filter: blur(10px);
@@ -60,45 +65,42 @@
         }
 
         nav {
-            margin: auto;
             display: flex;
-            padding: 10px !important;
+            padding: 10px 16px;
             justify-content: space-between;
             align-items: center;
             gap: 20px;
         }
 
-        .logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-
-        }
-
-        .logo span {
-            color: white;
+        nav img {
+            height: 40px;
+            width: auto;
+            flex-shrink: 0;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 24px;
+            flex-wrap: nowrap;
         }
 
         .nav-links a {
             color: white;
             font-size: 15px;
-            position: relative;
             font-weight: 700;
+            white-space: nowrap;
         }
 
         .nav-links a:hover,
         .nav-links a.active {
             color: white;
+            opacity: 0.85;
         }
 
         .started {
             color: white;
+            flex-shrink: 0;
         }
 
         .started-btn {
@@ -107,12 +109,13 @@
             padding: 8px 8px 8px 20px;
             border-radius: 50px;
             font-weight: 700;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
         }
 
         .btn-span {
-            background: linear-gradient(90deg,
-                    rgb(235, 232, 246) 0%,
-                    rgb(240, 239, 253) 100%);
+            background: linear-gradient(90deg, rgb(235, 232, 246) 0%, rgb(240, 239, 253) 100%);
             height: 36px;
             width: 36px;
             display: inline-block;
@@ -130,10 +133,148 @@
             color: white;
             font-size: 2rem;
             cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .started-btn,
+        .cons-btn,
+        .about-btn,
+        .price-btn,
+        .price-middle-card-btn,
+        .sec-left button,
+        .footer-btn {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .started-btn::before,
+        .cons-btn::before,
+        .about-btn::before,
+        .price-btn::before,
+        .price-middle-card-btn::before,
+        .sec-left button::before,
+        .footer-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0%;
+            height: 100%;
+            background: #4f46e5;
+            transition: 0.4s ease;
+            z-index: -1;
+            transform: translateX(-50%);
+        }
+
+        .started-btn:hover::before,
+        .cons-btn:hover::before,
+        .about-btn:hover::before,
+        .price-btn:hover::before,
+        .price-middle-card-btn:hover::before,
+        .sec-left button:hover::before,
+        .footer-btn:hover::before {
+            width: 120%;
+        }
+
+        .started-btn:hover,
+        .cons-btn:hover,
+        .about-btn:hover,
+        .price-btn:hover,
+        .price-middle-card-btn:hover,
+        .sec-left button:hover,
+        .footer-btn:hover {
+            color: white;
         }
 
 
-        /* section 3*/
+        @media (max-width: 1024px) {
+            header {
+                width: 94%;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                width: 94%;
+                top: 12px;
+                margin-left: 5px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                position: absolute;
+                top: calc(100% + 8px);
+                left: 0;
+                right: 0;
+                background-color: #5032b7;
+                border-radius: 8px;
+                padding: 12px 0;
+                z-index: 99;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px 24px;
+                font-size: 15px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-links li:last-child a {
+                border-bottom: none;
+            }
+
+            .started {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            header {
+                width: 96%;
+                top: 10px;
+                border-radius: 6px;
+                margin-right: -500px;
+            }
+
+            nav {
+                padding: 8px 12px;
+            }
+
+            nav img {
+                height: 34px;
+            }
+
+            .menu-btn {
+                font-size: 1.7rem;
+            }
+        }
+
+
         .section-services {
             background-color: #f4f5f8;
             color: black;
@@ -181,9 +322,6 @@
             max-width: 420px;
             min-height: 320px;
             margin: 0 auto;
-        }
-
-        .service-card {
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -245,7 +383,83 @@
             font-weight: 700;
         }
 
-         .partnership-section {
+        @media (max-width: 1100px) {
+            .service-cards {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 18px;
+            }
+
+            .service-card {
+                padding: 24px 18px;
+                min-height: 280px;
+            }
+
+            .service-card p {
+                font-size: 16px;
+            }
+
+            .service-btn {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .section-services {
+                padding-top: 70px;
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .service-cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+                padding-bottom: 70px;
+            }
+
+            .service-card {
+                max-width: 100%;
+                min-height: 260px;
+                padding: 28px 22px;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .section-services {
+                padding-top: 50px;
+                padding-left: 4%;
+                padding-right: 4%;
+            }
+
+            .sec-title h1 br {
+                display: none;
+            }
+
+            .service-cards {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                padding-bottom: 50px;
+            }
+
+            .service-card {
+                min-height: unset;
+                padding: 24px 20px;
+            }
+
+            .service-card h3 {
+                font-size: 1.15rem;
+            }
+
+            .service-card p {
+                font-size: 15px;
+                padding-bottom: 16px;
+            }
+
+            .service-btn {
+                font-size: 15px;
+            }
+        }
+
+        .partnership-section {
             padding-top: 80px;
             padding-bottom: 140px;
             position: relative;
@@ -314,77 +528,156 @@
             margin-top: 4px;
         }
 
-
-        .sec-footer {
-            background-color: white;
-            padding-top: 100px;
-        }
-
-        .main-footer {
-            margin: auto;
-            padding: 70px min(100px, 8%) 0 min(70px, 6%);
+        .last-section {
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
-            gap: 20px;
-            overflow-y: hidden;
+            background: linear-gradient(90deg, #2E0797 0%, #726EFC 100%);
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+            border-radius: 24px;
+            padding: 3rem 3rem 0 3rem;
             position: relative;
-            width: 80%;
-            max-width: 1400px;
-            min-height: 345px;
-            background: url(images/vl-hero-bg-4.1.webp);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            bottom: clamp(50px, 12vw, 150px);
-            border-radius: 8px;
+            z-index: 10;
+            margin-bottom: -150px;
+            margin-top: 100px;
+            box-sizing: border-box;
+            overflow: hidden;
         }
 
-        .footer-title h1 {
-            font-size: clamp(26px, 4.5vw, 48px);
-            line-height: clamp(34px, 5.5vw, 58px);
-            padding-bottom: 32px;
+        .banner-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-bottom: 3rem;
+            flex: 1;
+            min-width: 280px;
         }
 
-        .footer-form {
-            border-radius: 50px;
+        .cta-text>h2 {
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 3.5rem;
+            padding-bottom: 2rem;
+            color: white;
+            margin: 0;
+        }
+
+        .cta-form {
+            position: relative;
+            z-index: 1;
+            max-width: 480px;
             width: 100%;
-            height: 56px;
-            background-color: white;
-            color: black;
-            padding-left: 26px;
-            padding-right: 26px;
-            font-size: 14px;
-            line-height: 48px;
+        }
+
+        .cta-form input {
+            padding: 1rem 11rem 1rem 1.5rem;
+            height: 4rem;
+            width: 100%;
+            border-radius: 3rem;
+            border: none;
             outline: none;
-            position: relative;
+            box-sizing: border-box;
+            font-size: 1rem;
         }
 
-        .footer-btn {
-            position: relative;
-            bottom: 55px;
-            left: clamp(120px, 25vw, 325px);
-            color: black;
-            background-color: #5340ce;
-            height: 53px;
-            width: 40%;
-            max-width: 200px;
-            border-radius: 50px;
-            text-transform: uppercase;
+        .subscribeBtn {
+            position: absolute;
+            top: 50%;
+            right: 6px;
+            transform: translateY(-50%);
+            z-index: 2;
         }
 
-        .footer-btn span {
-            background-color: #edeaf8;
+        .contact {
+            background-color: white;
+            color: #2E0797;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1rem;
+            padding: 0.4rem 0.4rem 0.4rem 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            position: relative;
+            border-radius: 3rem;
+            overflow: hidden;
+            z-index: 1;
+            transition: color 0.4s ease;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #2E0797 0%, #726EFC 100%);
+            z-index: -1;
+            transition: width 0.4s ease-in-out;
+        }
+
+        .contact:hover::before {
+            width: 100%;
+        }
+        .contact:hover {
+            color: white;
+        }
+
+
+        .right-nav .contact>span,
+        .contact.hero-btn>span {
+            background: linear-gradient(90deg, rgb(235, 232, 246) 0%, rgb(240, 239, 253) 100%);
             height: 36px;
             width: 36px;
-            color: #6c63ee;
-            font-weight: bolder;
             display: inline-block;
             line-height: 36px;
             text-align: center;
             border-radius: 50px;
+            font-size: 20px;
+            color: #2E0797;
+            transform: rotate(-45deg);
             margin-left: 6px;
+            transition: 0.4s ease;
         }
+
+
+        .subscribeBtn button.contact.subscribe {
+            height: calc(4rem - 12px);
+            margin: 0 !important;
+            padding: 0 1.5rem;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            border-radius: 3rem;
+            border: none;
+            background-color: #2E0797;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .banner-right {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            flex: 1;
+            min-width: 280px;
+            position: relative;
+        }
+
+        .banner-right img {
+            max-height: 320px;
+            width: auto;
+            max-width: 100%;
+            display: block;
+            object-fit: contain;
+        }
+
 
         .shape3.sh {
             position: absolute;
@@ -394,137 +687,259 @@
             animation: vlbounce 5s linear infinite;
         }
 
+
         @keyframes vlbounce {
             0% {
                 transform: translateY(-20%);
             }
 
             50% {
-                transform: translateY(20%);
+                transform: translateY(20%)
             }
 
             100% {
                 transform: translateY(-20%);
+
             }
+
         }
 
-        .footer-grid {
+        .site-footer {
+            background-color: #F6F6F9;
+            width: 100%;
+            padding: 240px 10% 4rem 10%;
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 25px;
-            padding-left: min(150px, 10%);
-            padding-right: min(100px, 6%);
-            position: relative;
-            bottom: clamp(30px, 8vw, 100px);
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            box-sizing: border-box;
         }
 
-        .logo-footer {
-            color: black;
-        }
-
-        .logo-footer p {
-            padding-top: 16px;
-            font-size: 18px;
-            line-height: 26px;
-            opacity: 0.8;
-            padding-bottom: 32px;
-        }
-
-        .footer-social-icons {
-            display: flex;
-            gap: 15px;
-            color: #4d36c6;
-        }
-
-        .footer-social-icons i {
-            background-color: #edeaf8;
-            height: 36px;
-            width: 36px;
-            color: #6c63ee;
-            font-weight: bolder;
-            line-height: 36px;
-            text-align: center;
-            border-radius: 50px;
-        }
-
-        .footer-social-icons i:hover {
-            background-color: #4d36c6;
-            color: white;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .footer-links {
+        .footer-col {
             display: flex;
             flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .footer-logo img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .brand-col p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6rem;
+            margin: 0;
+        }
+
+        .social-icons {
+            display: flex;
             gap: 12px;
-            color: black;
-            margin-left: min(40px, 4vw);
         }
 
-        .footer-links h3 {
-            font-size: 20px;
-            line-height: 28px;
-            font-weight: 600;
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #fff;
+            color: #2E0797;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
         }
 
-        .footer-links a {
-            font-size: 18px;
-            line-height: 24px;
-            opacity: 0.8;
+        .social-icons a:hover {
+            background-color: #2E0797;
+            color: #fff;
         }
 
-        .footer-links li {
-            margin-top: 12px;
+        .footer-col h3 {
+            color: #000;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
         }
 
-        .footer-image-grid {
+        .links-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .links-col ul li a {
+            color: rgba(22, 22, 22, 0.7);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .links-col ul li a:hover {
+            color: #726EFC;
+        }
+
+        .insta-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 10px;
-            margin-top: 15px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            max-width: 240px;
         }
 
-        .footer-image-grid img {
+        .insta-item {
+            aspect-ratio: 1 / 1;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #222;
+        }
+
+        .insta-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 8px;
+            display: block;
         }
 
-        .gallery-title {
-            font-size: 20px;
-            line-height: 28px;
-            font-weight: 600;
-            color: black;
+        .bottom-footer {
+            background-color: #F6F6F9;
+            border-top: 1px solid #DDDEE1;
+            width: 100%;
+            padding: 24px 0;
         }
 
-        .footer-copyright {
+        .bottom-footer-container {
+            width: 80%;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            color: black;
-            margin-left: min(50px, 4vw);
-            padding-right: min(100px, 8%);
-            min-height: 70px;
-            padding-top: 30px;
+            box-sizing: border-box;
         }
 
-        .footer-copyright p {
-            font-size: 16px;
-            line-height: 26px;
-            opacity: 0.8;
+
+        @media (max-width: 1200px) {
+            .site-footer {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .bottom-footer-container {
+                width: 90%;
+            }
         }
 
-        .footer-copyright span {
-            font-size: 16px;
-            line-height: 26px;
-            opacity: 0.8;
+        @media (max-width: 992px) {
+            .site-footer {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+            }
+
+            .cta-text>h2 {
+                font-size: 2.5rem;
+                line-height: 3rem;
+            }
         }
 
-              @media (max-width: 991.98px) {
+        @media (max-width: 768px) {
+            .last-section {
+                width: 92%;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 3rem 1.5rem 0 1.5rem;
+                margin-bottom: -180px;
+            }
+
+            .banner-left {
+                align-items: center;
+                width: 100%;
+                padding-bottom: 2rem;
+            }
+
+            .cta-text>h2 {
+                font-size: 2.2rem;
+                line-height: 2.8rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .banner-right {
+                width: 100%;
+            }
+
+            .banner-right img {
+                max-height: 280px;
+            }
+
+            .site-footer {
+                grid-template-columns: repeat(2, 1fr);
+                padding-top: 240px;
+            }
+
+            .bottom-footer-container {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .shape3.sh {
+                display: none;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .site-footer {
+                grid-template-columns: repeat(2, 1fr);
+                padding-top: 280px;
+                gap: 2.5rem 1.5rem;
+            }
+
+            .footer-col.brand-col,
+            .footer-col.insta-col {
+                grid-column: span 2;
+            }
+
+            .footer-col.links-col {
+                grid-column: span 1;
+            }
+
+            .last-section {
+                margin-bottom: -240px;
+            }
+
+            .cta-form input {
+                padding: 1rem;
+                border-radius: 12px;
+                text-align: center;
+                height: 3.5rem;
+            }
+
+            .subscribeBtn {
+                position: static;
+                transform: none;
+                margin-top: 12px;
+                width: 100%;
+            }
+
+            .subscribeBtn button.contact.subscribe {
+                width: 100%;
+                justify-content: center;
+                border-radius: 12px;
+                height: 3.5rem;
+            }
+
+            .insta-grid {
+                max-width: 100%;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+        @media (max-width: 991.98px) {
             .floating-stats-card {
                 position: relative !important;
                 left: 0 !important;
@@ -553,25 +968,26 @@
     </style>
 </head>
 
-<body>
+<body style="position: relative;">
+    <!-- Header -->
     <header class="header">
         <nav class="navbar">
-            <img src="images/vl-logo-1.1.webp" alt="" />
-
+            <img src="images/vl-logo-1.1.webp" alt="Logo">
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="About.html">About Us</a></li>
-                <li><a href="#Services">Services</a></li>
+                <li><a href="Services.html">Services</a></li>
                 <li><a href="#Pages">Pages</a></li>
                 <li><a href="#Case Studies">Case Studies</a></li>
                 <li><a href="#Blogs">Blogs</a></li>
             </ul>
             <div class="started">
-                <button class="started-btn">
-                    Get Started
-                    <span class="btn-span"><i class="bi bi-arrow-up-right"></i> </span>
-                </button>
+                <button class="started-btn"><a href="contact.html">Get Started</a> <span class="btn-span"><i
+                            class="bi bi-arrow-up-right"></i></span></button>
             </div>
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="bi bi-list"></i>
+            </button>
         </nav>
     </header>
 
@@ -744,152 +1160,160 @@
     </section>
 
     <section class="partnership-section">
-    <div class="custom-layout-container">
+        <div class="custom-layout-container">
 
-      <div class="row mb-5">
-        <div class="col-12">
-          <span class="badge mb-3 px-3 py-2 text-uppercase fw-bold"
-            style="background-color: #ede9fe; color: #5046e5; border-radius: 30px; font-size: 1rem; letter-spacing: 0.5px;">
-            Why Choose Us
-          </span>
-          <h2 class="fw-bold text-dark mb-0" style="font-size: 2.5rem; line-height: 1.3; letter-spacing: -0.5px;">
-            We Don't Just Deliver Solutions <br> We Build Partnerships
-          </h2>
+            <div class="row mb-5">
+                <div class="col-12">
+                    <span class="badge mb-3 px-3 py-2 text-uppercase fw-bold"
+                        style="background-color: #ede9fe; color: #5046e5; border-radius: 30px; font-size: 1rem; letter-spacing: 0.5px;">
+                        Why Choose Us
+                    </span>
+                    <h2 class="fw-bold text-dark mb-0"
+                        style="font-size: 2.5rem; line-height: 1.3; letter-spacing: -0.5px;">
+                        We Don't Just Deliver Solutions <br> We Build Partnerships
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row align-items-start justify-content-between">
+
+                <div class="col-lg-8 pe-lg-4 mb-4 mb-lg-0">
+                    <div class="image-cluster">
+                        <img src="images/vl-about-choose-1.webp" class="tall-img" alt="Workspace Team">
+                        <img src="images/vl-about-choose-2.webp" class="short-img" alt="Mobile Analysis">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 ps-lg-4">
+                    <div class="content-right-block">
+                        <p class="text-muted mb-4" style="line-height: 28px; font-size: 18px; color: #5f6168;">
+                            We understand that every business is unique,<br>is why we offer customized IT solutions
+                            that<br> fit your needs perfectly. Our approach rooted <br> in collaboration and innovation,
+                            ensuring you <br> receive the best tools and strategies.
+                        </p>
+
+                        <a href="#"
+                            class="btn rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2 text-white"
+                            style="background-color: #5046e5; font-size: 1rem; letter-spacing: 0.5px; box-shadow: 0 4px 14px rgba(80, 70, 229, 0.25);">
+                            LEARN MORE
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                                class="bi bi-arrow-up-right" viewBox="0 0 16 16"
+                                style="stroke-width: 1.5; stroke: currentColor;">
+                                <path fill-rule="evenodd"
+                                    d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="floating-stats-card p-4">
+                <div class="row text-center py-2 g-0">
+                    <div class="col-6 col-md-3 border-end border-light-subtle">
+                        <div class="stat-number"><span class="counter" data-target="90">0</span>k</div>
+                        <div class="stat-label">Happy Client</div>
+                    </div>
+                    <div class="col-6 col-md-3 border-end border-light-subtle">
+                        <div class="stat-number"><span class="counter" data-target="650">0</span>+</div>
+                        <div class="stat-label">Total Projects</div>
+                    </div>
+                    <div class="col-6 col-md-3 border-end border-light-subtle">
+                        <div class="stat-number"><span class="counter" data-target="85">0</span>+</div>
+                        <div class="stat-label">Work Together</div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-number"><span class="counter" data-target="12">0</span>+</div>
+                        <div class="stat-label">Year of Experience</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </div>
+    </section>
 
-      <div class="row align-items-start justify-content-between">
+    <section class="last-section">
 
-        <div class="col-lg-8 pe-lg-4 mb-4 mb-lg-0">
-          <div class="image-cluster">
-            <img src="images/vl-about-choose-1.webp" class="tall-img" alt="Workspace Team">
-            <img src="images/vl-about-choose-2.webp" class="short-img" alt="Mobile Analysis">
-          </div>
+        <div class="footer-cta-banner-left">
+            <div class="cta-text">
+                <h2>Transform Your Business <br> Contact Us Today</h2>
+            </div>
+            <div class="cta-form">
+                <input type="email" name="email" id="" placeholder="Email Address">
+                <div class="subscribeBtn">
+                    <button type="submit" class="contact hero-btn subscribe">SUBSCRIBE NOW
+                        <span><i class="fa-solid fa-arrow-right"></i></span></button>
+                </div>
+            </div>
         </div>
 
-        <div class="col-lg-4 ps-lg-4">
-          <div class="content-right-block">
-            <p class="text-muted mb-4" style="line-height: 28px; font-size: 18px; color: #5f6168;">
-              We understand that every business is unique,<br>is why we offer customized IT solutions
-              that<br> fit your needs perfectly. Our approach rooted <br> in collaboration and innovation,
-              ensuring you <br> receive the best tools and strategies.
-            </p>
+        <div class="footer-cta-banner-right">
+            <div class="shapes">
+                <div class="shape3 sh">
+                    <img src="./assets/emoji-4.3.svg">
+                </div>
+            </div>
 
-            <a href="#" class="btn rounded-pill px-4 py-2.5 fw-bold d-inline-flex align-items-center gap-2 text-white"
-              style="background-color: #5046e5; font-size: 1rem; letter-spacing: 0.5px; box-shadow: 0 4px 14px rgba(80, 70, 229, 0.25);">
-              LEARN MORE
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                class="bi bi-arrow-up-right" viewBox="0 0 16 16" style="stroke-width: 1.5; stroke: currentColor;">
-                <path fill-rule="evenodd"
-                  d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
-              </svg>
-            </a>
-          </div>
+            <img src="./assets/black-person-i,g.webp" alt="" srcset="">
+        </div>
+    </section>
+
+    <footer class="site-footer">
+
+        <div class="footer-col brand-col">
+            <div class="footer-logo">
+                <img src="images/vl-logo-1.webp" alt="" srcset="">
+            </div>
+            <p>We foster a culture of teamwork &
+                creative problem-solving to deliver
+                exceptional results for our clients.</p>
+            <div class="social-icons">
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-col links-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Service</a></li>
+                <li><a href="#">Case Study</a></li>
+                <li><a href="#">Testimonial</a></li>
+            </ul>
         </div>
 
-      </div>
-
-      <div class="floating-stats-card p-4">
-        <div class="row text-center py-2 g-0">
-          <div class="col-6 col-md-3 border-end border-light-subtle">
-            <div class="stat-number"><span class="counter" data-target="90">0</span>k</div>
-            <div class="stat-label">Happy Client</div>
-          </div>
-          <div class="col-6 col-md-3 border-end border-light-subtle">
-            <div class="stat-number"><span class="counter" data-target="650">0</span>+</div>
-            <div class="stat-label">Total Projects</div>
-          </div>
-          <div class="col-6 col-md-3 border-end border-light-subtle">
-            <div class="stat-number"><span class="counter" data-target="85">0</span>+</div>
-            <div class="stat-label">Work Together</div>
-          </div>
-          <div class="col-6 col-md-3">
-            <div class="stat-number"><span class="counter" data-target="12">0</span>+</div>
-            <div class="stat-label">Year of Experience</div>
-          </div>
+        <div class="footer-col links-col">
+            <h3>Our Service</h3>
+            <ul>
+                <li><a href="#">Cyber Security</a></li>
+                <li><a href="#">Network Analysis</a></li>
+                <li><a href="#">Data Recovery</a></li>
+                <li><a href="#">It Service</a></li>
+            </ul>
         </div>
-      </div>
 
-    </div>
-  </section>
-
-  <footer class="sec-footer">
-    <div class="main-footer">
-      <div class="footer-title">
-        <h1>Transform Your Business <br> Contact Us Today</h1>
-        <form>
-          <input type="Email" placeholder="Email Address" class="footer-form">
-          <button class="footer-btn">Subscribe Now <span><i class="bi bi-arrow-up-right"></i></span></button>
-        </form>
-      </div>
-      <div class="shapes">
-        <div class="shape3 sh">
-          <img src="images/icon-arrow.svg">
+        <div class="footer-col insta-col">
+            <h3>Instagram Post</h3>
+            <div class="insta-grid">
+                <div class="insta-item"><img src="assets/ins-1.webp" alt="Post 1"></div>
+                <div class="insta-item"><img src="./assets/ins-2.webp" alt="Post 2"></div>
+                <div class="insta-item"><img src="./assets/ins-3.webp" alt="Post 3"></div>
+                <div class="insta-item"><img src="./assets/ins-4.webp" alt="Post 4"></div>
+                <div class="insta-item"><img src="./assets/ins-5.webp" alt="Post 5"></div>
+                <div class="insta-item"><img src="./assets/ins-6.webp" alt="Post 6"></div>
+            </div>
         </div>
-      </div>
-      <img src="images/footerimg.webp" alt="">
-    </div>
+    </footer>
 
-    <div class="footer-grid">
-      <div class="logo-footer">
-        <img src="images/vl-footer-logo-4.2.webp" alt="">
-        <p>We foster a culture of teamwork &
-          creative problem-solving to deliver
-          exceptional results for our clients.</p>
-        <div class="footer-social-icons">
-          <i class="bi bi-facebook"></i>
-          <i class="bi bi-linkedin"></i>
-          <i class="bi bi-instagram"></i>
-          <i class="bi bi-youtube"></i>
+
+    <footer class="bottom-footer">
+        <div class="bottom-footer-container">
+            <p>Copyright ©2024 O-Tech. All Rights Reserved</p>
+            <span>Terms & Conditions | Privacy Policy</span>
         </div>
-      </div>
-
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Our Service</a></li>
-          <li><a href="#">Case Study</a></li>
-          <li><a href="#">Testimonial</a></li>
-        </ul>
-      </div>
-
-      <div class=" footer-links">
-        <h3>Our Services</h3>
-        <ul>
-          <li><a href="#">Cyber Security</a></li>
-          <li><a href="#">Network Analysis</a></li>
-          <li><a href="#">Data Recovery</a></li>
-          <li><a href="#">It Services</a></li>
-        </ul>
-      </div>
-
-      <div class="gallery-title">
-        <h3>Instagram Posts</h3>
-
-        <div class="footer-image-grid">
-          <img src="images/footer1.webp" alt="">
-          <img src="images/footer2.webp" alt="">
-          <img src="images/footer3.webp" alt="">
-          <img src="images/footer4.webp" alt="">
-          <img src="images/footer5.webp" alt="">
-          <img src="images/footer6.webp" alt="">
-        </div>
-      </div>
-
-    </div>
-
-    <hr style="color: black; opacity: 0.5; ">
-
-    <div class="footer-copyright">
-      <p>Copyright ©2024 O-Tech. All Rights Reserved</p>
-
-      <span>Terms & Conditions | Privacy Policy</span>
-
-
-    </div>
-
-  </footer>
+    </footer>
 
 
 
