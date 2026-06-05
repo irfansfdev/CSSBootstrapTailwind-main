@@ -345,63 +345,116 @@
       filter: invert(27%) sepia(85%) saturate(2106%) translateY(0) hue-rotate(236deg) brightness(87%) contrast(93%);
     }
 
+ /* --- SECTION 7 (TEAM) --- */
+        .section-team {
+            background-color: #f4f5f8;
+            padding: 100px min(100px, 6%);
+        }
 
-    .section-team {
-      background-color: #f4f5f8;
-      padding: 100px min(100px, 6%);
-    }
+        .team-title {
+            color: black;
+        }
 
-    .team-title {
-      color: black;
-    }
+        .team-title span {
+            background-color: #eae9f3;
+            color: #3b1baa;
+            text-transform: uppercase;
+            border-radius: 50px;
+            padding: 8px 12px;
+            font-size: 16px;
+            line-height: 16px;
+            display: inline-block;
+        }
 
-    .team-title span {
-      background-color: #eae9f3;
-      color: #3b1baa;
-      text-transform: uppercase;
-      border-radius: 50px;
-      padding: 8px 12px;
-      font-size: 16px;
-      line-height: 16px;
-    }
+        .team-title h1 {
+            font-size: clamp(24px, 4vw, 44px);
+            line-height: clamp(32px, 5vw, 52px);
+            margin: 0;
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+        }
 
-    .team-title h1 {
-      font-size: clamp(24px, 4vw, 44px);
-      line-height: clamp(32px, 5vw, 52px);
-      margin: 0;
-      padding-top: 1rem;
-      padding-bottom: 2rem;
-    }
+        .image-card {
+            position: relative;
+        }
 
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 25px;
-    }
+        .team-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            width: 100%;
+        }
 
-    .image-card img {
-      background-color: white;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 8px;
-    }
+        .image-card img {
+            background-color: white;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
 
-    .image-card h2 {
-      color: black;
-      text-align: center;
-      font-size: clamp(20px, 2.5vw, 24px);
-      margin-top: 20px;
-    }
+        .team-social-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            width: 90%;
+            padding: 15px 10px;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, rgba(61, 27, 175, 0.85), rgba(108, 99, 238, 0.85));
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transform: translateY(101%);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            border-radius: 0 0 8px 8px;
+        }
 
-    .image-card p {
-      font-size: clamp(16px, 1.5vw, 18px);
-      color: black;
-      text-align: center;
-      opacity: 0.7;
-      margin-top: 10px;
-    }
+        .image-card:hover .team-social-overlay {
+            transform: translateY(0);
+        }
 
+        .social-icons-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .social-icons-row a {
+            background-color: rgba(255, 255, 255, 0.25);
+            height: 40px;
+            width: 40px;
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons-row a:hover {
+            background-color: #ffffff;
+            color: #3b1baa;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-card h2 {
+            color: black;
+            text-align: center;
+            font-size: clamp(20px, 2.5vw, 24px);
+            margin-top: 20px;
+            font-weight: 700;
+        }
+
+        .image-card p {
+            font-size: clamp(16px, 1.5vw, 18px);
+            color: black;
+            text-align: center;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
     .group:hover .group-hover\:bg-brand {
       background-color: #3D1BAF !important;
     }
@@ -1335,39 +1388,79 @@
 
   <!-- SECTION 5-->
   <section class="section-team">
-    <div class="team-title">
-      <span>Our Team</span>
-      <h1>Dedicated Professionals, <br> Proven Results</h1>
-    </div>
+            <div class="team-title">
+                <span>Our Team</span>
+                <h1>Dedicated Professionals, <br> Proven Results</h1>
+            </div>
 
-    <div class="owl-carousel four-cards">
+            <div class="owl-carousel four-cards">
 
-      <div class="image-card">
-        <img src="images/secH1.webp" alt="">
-        <h2>Kandra Cremin</h2>
-        <p>Network Engineer</p>
-      </div>
+                <div class="image-card">
+                    <div class="team-img-wrapper">
+                        <img src="images/secH1.webp" alt="Kandra Cremin">
+                        <div class="team-social-overlay">
+                            <div class="social-icons-row">
+                                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Kandra Cremin</h2>
+                    <p>Network Engineer</p>
+                </div>
 
-      <div class="image-card">
-        <img src="images/secH2.webp" alt="">
-        <h2>Jack Williomson</h2>
-        <p>Digital Marketer</p>
-      </div>
+                <div class="image-card">
+                    <div class="team-img-wrapper">
+                        <img src="images/secH2.webp" alt="Jack Williamson">
+                        <div class="team-social-overlay">
+                            <div class="social-icons-row">
+                                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Jack Williamson</h2>
+                    <p>Digital Marketer</p>
+                </div>
 
-      <div class="image-card">
-        <img src="images/secH3.webp" alt="">
-        <h2>Dannis Jacobson</h2>
-        <p>CEO & Founder</p>
-      </div>
+                <div class="image-card">
+                    <div class="team-img-wrapper">
+                        <img src="images/secH3.webp" alt="Dannis Jacobson">
+                        <div class="team-social-overlay">
+                            <div class="social-icons-row">
+                                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Dannis Jacobson</h2>
+                    <p>CEO & Founder</p>
+                </div>
 
-      <div class="image-card">
-        <img src="images/secH4.webp" alt="">
-        <h2>Patricia Wilkinson</h2>
-        <p>Digital Marketer</p>
-      </div>
+                <div class="image-card">
+                    <div class="team-img-wrapper">
+                        <img src="images/secH4.webp" alt="Patricia Wilkinson">
+                        <div class="team-social-overlay">
+                            <div class="social-icons-row">
+                                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Patricia Wilkinson</h2>
+                    <p>Digital Marketer</p>
+                </div>
 
-    </div>
-  </section>
+            </div>
+        </section>
 
   <section class="w-full relative bg-gray-50 py-16 mb-[10rem] overflow-x-hidden ">
 
