@@ -268,415 +268,421 @@
         }
 
 
-.last-section {    
-    display: flex;
-    flex-wrap: wrap;
-    background: linear-gradient(90deg, #2E0797 0%, #726EFC 100%);    
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    justify-content: space-between;
-    border-radius: 24px;
-    padding: 3rem 3rem 0 3rem; 
-    position: relative;
-    z-index: 10;
-    margin-bottom: -150px; 
-    margin-top: 100px;
-    box-sizing: border-box;
-}
+        .last-section {
+            display: flex;
+            flex-wrap: wrap;
+            background: linear-gradient(90deg, #2E0797 0%, #726EFC 100%);
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+            border-radius: 24px;
+            padding: 3rem 3rem 0 3rem;
+            position: relative;
+            z-index: 10;
+            margin-bottom: -150px;
+            margin-top: 100px;
+            box-sizing: border-box;
+        }
 
-.banner-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-bottom: 3rem;
-    flex: 1;
-    min-width: 280px;
-}
+        .banner-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-bottom: 3rem;
+            flex: 1;
+            min-width: 280px;
+        }
 
-.cta-text > h2 {
-    font-size: 3rem;
-    font-weight: 600;
-    line-height: 3.5rem;
-    padding-bottom: 2rem;
-    color: white;
-    margin: 0;
-}
+        .cta-text>h2 {
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 3.5rem;
+            padding-bottom: 2rem;
+            color: white;
+            margin: 0;
+        }
 
-.cta-form {
-    position: relative;
-    z-index: 1;
-    max-width: 480px;
-    width: 100%;
-}
+        .cta-form {
+            position: relative;
+            z-index: 1;
+            max-width: 480px;
+            width: 100%;
+        }
 
-.cta-form input {
-    padding: 1rem 11rem 1rem 1.5rem; 
-    height: 4rem;
-    width: 100%;
-    border-radius: 3rem;
-    border: none;
-    outline: none;
-    box-sizing: border-box;
-    font-size: 1rem;
-}
+        .cta-form input {
+            padding: 1rem 11rem 1rem 1.5rem;
+            height: 4rem;
+            width: 100%;
+            border-radius: 3rem;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
 
-.subscribeBtn {
-    position: absolute;
-    top: 50%;
-    right: 6px; 
-    transform: translateY(-50%); 
-    z-index: 2;
-}
-
-
-
-.contact {
-    background-color: white; 
-    color: #2E0797;
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1rem;
-    padding: 0.4rem 0.4rem 0.4rem 1.2rem; 
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    position: relative;
-    border-radius: 3rem;
-    overflow: hidden;  
-    z-index: 1;
-    transition: color 0.4s ease;
-}
-
-.contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0%; 
-    height: 100%;
-    background: linear-gradient(90deg, #2E0797 0%, #726EFC 100%);
-    z-index: -1;  
-    transition: width 0.4s ease-in-out;
-}
-
-.contact:hover::before {
-    width: 100%;
-}
-
-
-.contact:hover {
-    color: white;
-}
-
-
-.right-nav .contact>span, .contact.hero-btn>span {
-    background: linear-gradient(90deg, rgb(235, 232, 246) 0%, rgb(240, 239, 253) 100%);
-    height: 36px;
-    width: 36px;
-    display: inline-block;
-    line-height: 36px;
-    text-align: center;
-    border-radius: 50px;
-    font-size: 20px;
-    color: #2E0797;
-    transform: rotate(-45deg);
-    margin-left: 6px;
-    transition: 0.4s ease;
-}
-
-
-.subscribeBtn button.contact.subscribe {
-    height: calc(4rem - 12px); 
-    margin: 0 !important; 
-    padding: 0 1.5rem; 
-    white-space: nowrap; 
-    display: inline-flex;
-    align-items: center;
-    border-radius: 3rem;
-    border: none;
-    background-color: #2E0797;
-    color: white;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.banner-right {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    flex: 1;
-    min-width: 280px;
-    position: relative;
-}
-
-.banner-right img {
-    max-height: 320px;
-    width: auto;
-    max-width: 100%;
-    display: block;
-    object-fit: contain;
-}
-
-
-.shape3.sh {
-    position: absolute;
-    right: 35%;
-    top: 20%;
-    z-index: 1;
-    animation: vlbounce 5s linear infinite;
-}
-
-
-@keyframes vlbounce {
-    0% {
-        transform: translateY(-20%);
-    }
-    50% {
-        transform: translateY(20%)
-    }
-    100% {
-        transform: translateY(-20%);
-
-    } 
-
-}
-.site-footer {
-    background-color: #F6F6F9; 
-    width: 100%;
-    padding: 240px 10% 4rem 10%;    
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    box-sizing: border-box;
-}
-
-.footer-col {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.footer-logo img {
-    max-width: 150px;
-    height: auto;
-}
-
-.brand-col p {
-    color: #666;
-    font-size: 1rem;
-    line-height: 1.6rem;
-    margin: 0;
-}
-
-.social-icons {
-    display: flex;
-    gap: 12px;
-}
-
-.social-icons a {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #fff;
-    color: #2E0797;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-    background-color: #2E0797;
-    color: #fff;
-}
-
-.footer-col h3 {
-    color: #000;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.links-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.links-col ul li a {
-    color: rgba(22, 22, 22, 0.7);
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.links-col ul li a:hover {
-    color: #726EFC;
-}
-
-.insta-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    max-width: 240px;
-}
-
-.insta-item {
-    aspect-ratio: 1 / 1;
-    border-radius: 6px;
-    overflow: hidden;
-    background-color: #222;
-}
-
-.insta-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-
-.bottom-footer {
-    background-color: #F6F6F9;
-    border-top: 1px solid #DDDEE1;
-    width: 100%;
-    padding: 24px 0;
-}
-
-.bottom-footer-container {
-    width: 80%; 
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-}
+        .subscribeBtn {
+            position: absolute;
+            top: 50%;
+            right: 6px;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
 
 
 
-@media (max-width: 1200px) {
-    .site-footer {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-    .bottom-footer-container {
-        width: 90%;
-    }
-}
+        .contact {
+            background-color: white;
+            color: #2E0797;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1rem;
+            padding: 0.4rem 0.4rem 0.4rem 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            position: relative;
+            border-radius: 3rem;
+            overflow: hidden;
+            z-index: 1;
+            transition: color 0.4s ease;
+        }
 
-@media (max-width: 992px) {
-    .site-footer {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
-    }
-    .cta-text > h2 {
-        font-size: 2.5rem;
-        line-height: 3rem;
-    }
-}
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #2E0797 0%, #726EFC 100%);
+            z-index: -1;
+            transition: width 0.4s ease-in-out;
+        }
 
-@media (max-width: 768px) {
-    .last-section {
-        width: 92%;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 3rem 1.5rem 0 1.5rem;
-        margin-bottom: -180px; 
-    }
-    
-    .banner-left {
-        align-items: center;
-        width: 100%;
-        padding-bottom: 2rem;
-    }
+        .contact:hover::before {
+            width: 100%;
+        }
 
-    .cta-text > h2 {
-        font-size: 2.2rem;
-        line-height: 2.8rem;
-        padding-bottom: 1.5rem;
-    }
 
-    .banner-right {
-        width: 100%;
-    }
+        .contact:hover {
+            color: white;
+        }
 
-    .banner-right img {
-        max-height: 280px;
-    }
 
-    .site-footer {
-        grid-template-columns: repeat(2, 1fr);
-        padding-top: 240px; 
-    }
+        .right-nav .contact>span,
+        .contact.hero-btn>span {
+            background: linear-gradient(90deg, rgb(235, 232, 246) 0%, rgb(240, 239, 253) 100%);
+            height: 36px;
+            width: 36px;
+            display: inline-block;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 50px;
+            font-size: 20px;
+            color: #2E0797;
+            transform: rotate(-45deg);
+            margin-left: 6px;
+            transition: 0.4s ease;
+        }
 
-    .bottom-footer-container {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-    }
 
-    .shape3.sh{
-        display:none;
-    }
-}
+        .subscribeBtn button.contact.subscribe {
+            height: calc(4rem - 12px);
+            margin: 0 !important;
+            padding: 0 1.5rem;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            border-radius: 3rem;
+            border: none;
+            background-color: #2E0797;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+        }
 
-@media (max-width: 520px) {
-    .site-footer {
-        grid-template-columns: repeat(2, 1fr); 
-        padding-top: 280px; 
-        gap: 2.5rem 1.5rem;
-    }
+        .banner-right {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            flex: 1;
+            min-width: 280px;
+            position: relative;
+        }
 
-    .footer-col.brand-col,
-    .footer-col.insta-col {
-        grid-column: span 2;
-    }
+        .banner-right img {
+            max-height: 320px;
+            width: auto;
+            max-width: 100%;
+            display: block;
+            object-fit: contain;
+        }
 
-    .footer-col.links-col {
-        grid-column: span 1;
-    }
 
-    .last-section {
-        margin-bottom: -240px; 
-    }
+        .shape3.sh {
+            position: absolute;
+            right: 35%;
+            top: 20%;
+            z-index: 1;
+            animation: vlbounce 5s linear infinite;
+        }
 
-    .cta-form input {
-        padding: 1rem;
-        border-radius: 12px;
-        text-align: center;
-        height: 3.5rem;
-    }
-    
-    .subscribeBtn {
-        position: static;
-        transform: none;
-        margin-top: 12px;
-        width: 100%;
-    }
-    
-    .subscribeBtn button.contact.subscribe {
-        width: 100%;
-        justify-content: center;
-        border-radius: 12px;
-        height: 3.5rem;
-    }
 
-    .insta-grid {
-        max-width: 100%;
-        grid-template-columns: repeat(3, 1fr);
-    }
+        @keyframes vlbounce {
+            0% {
+                transform: translateY(-20%);
+            }
 
-}
+            50% {
+                transform: translateY(20%)
+            }
+
+            100% {
+                transform: translateY(-20%);
+
+            }
+
+        }
+
+        .site-footer {
+            background-color: #F6F6F9;
+            width: 100%;
+            padding: 240px 10% 4rem 10%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            box-sizing: border-box;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .footer-logo img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .brand-col p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6rem;
+            margin: 0;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #fff;
+            color: #2E0797;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #2E0797;
+            color: #fff;
+        }
+
+        .footer-col h3 {
+            color: #000;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .links-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .links-col ul li a {
+            color: rgba(22, 22, 22, 0.7);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .links-col ul li a:hover {
+            color: #726EFC;
+        }
+
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            max-width: 240px;
+        }
+
+        .insta-item {
+            aspect-ratio: 1 / 1;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #222;
+        }
+
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        .bottom-footer {
+            background-color: #F6F6F9;
+            border-top: 1px solid #DDDEE1;
+            width: 100%;
+            padding: 24px 0;
+        }
+
+        .bottom-footer-container {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+
+
+        @media (max-width: 1200px) {
+            .site-footer {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .bottom-footer-container {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .site-footer {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+            }
+
+            .cta-text>h2 {
+                font-size: 2.5rem;
+                line-height: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .last-section {
+                width: 92%;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 3rem 1.5rem 0 1.5rem;
+                margin-bottom: -180px;
+            }
+
+            .banner-left {
+                align-items: center;
+                width: 100%;
+                padding-bottom: 2rem;
+            }
+
+            .cta-text>h2 {
+                font-size: 2.2rem;
+                line-height: 2.8rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .banner-right {
+                width: 100%;
+            }
+
+            .banner-right img {
+                max-height: 280px;
+            }
+
+            .site-footer {
+                grid-template-columns: repeat(2, 1fr);
+                padding-top: 240px;
+            }
+
+            .bottom-footer-container {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .shape3.sh {
+                display: none;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .site-footer {
+                grid-template-columns: repeat(2, 1fr);
+                padding-top: 280px;
+                gap: 2.5rem 1.5rem;
+            }
+
+            .footer-col.brand-col,
+            .footer-col.insta-col {
+                grid-column: span 2;
+            }
+
+            .footer-col.links-col {
+                grid-column: span 1;
+            }
+
+            .last-section {
+                margin-bottom: -240px;
+            }
+
+            .cta-form input {
+                padding: 1rem;
+                border-radius: 12px;
+                text-align: center;
+                height: 3.5rem;
+            }
+
+            .subscribeBtn {
+                position: static;
+                transform: none;
+                margin-top: 12px;
+                width: 100%;
+            }
+
+            .subscribeBtn button.contact.subscribe {
+                width: 100%;
+                justify-content: center;
+                border-radius: 12px;
+                height: 3.5rem;
+            }
+
+            .insta-grid {
+                max-width: 100%;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
 
         @media (max-width: 991.98px) {
             .floating-stats-card {
@@ -760,7 +766,8 @@
 
                 <div
                     class="absolute right-[-10px] lg:right-[20px] top-[55%] sm:w-14 lg:w-[100px] animate-[bounce_5s_infinite_1s] z-20 rotate-12">
-                    <img src="images/emoji-4.2.svg" alt="Megaphone" class="w-full h-auto object-contain drop-shadow-md" />
+                    <img src="images/emoji-4.2.svg" alt="Megaphone"
+                        class="w-full h-auto object-contain drop-shadow-md" />
                 </div>
             </div>
         </div>
@@ -881,86 +888,87 @@ hover:before:scale-x-100">
 
     <section class="last-section">
 
-    <div class="footer-cta-banner-left">
-      <div class="cta-text">
-        <h2>Transform Your Business <br> Contact Us Today</h2>
-      </div>
-      <div class="cta-form">
-        <input type="email" name="email" id="" placeholder="Email Address">
-        <div class="subscribeBtn">
-          <button type="submit" class="contact hero-btn subscribe">SUBSCRIBE NOW
-            <span><i class="fa-solid fa-arrow-right"></i></span></button>
+        <div class="footer-cta-banner-left">
+            <div class="cta-text">
+                <h2>Transform Your Business <br> Contact Us Today</h2>
+            </div>
+            <div class="cta-form">
+                <input type="email" name="email" id="" placeholder="Email Address">
+                <div class="subscribeBtn">
+                    <button type="submit" class="contact hero-btn subscribe">SUBSCRIBE NOW
+                        <span><i class="fa-solid fa-arrow-right"></i></span></button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <div class="footer-cta-banner-right">
-      <div class="shapes">
-        <div class="shape3 sh">
-          <img src="./assets/emoji-4.3.svg">
+        <div class="footer-cta-banner-right">
+            <div class="shapes">
+                <div class="shape3 sh">
+                    <img src="./assets/emoji-4.3.svg">
+                </div>
+            </div>
+
+            <img src="./assets/black-person-i,g.webp" alt="" srcset="">
         </div>
-      </div>
+    </section>
 
-      <img src="./assets/black-person-i,g.webp" alt="" srcset="">
-    </div>
-  </section>
+    <footer class="site-footer">
 
-  <footer class="site-footer">
+        <div class="footer-col brand-col">
+            <div class="footer-logo">
+                <a href="index.html"><img src="assets/vl-logo-1.webp" alt="" srcset=""></a>
 
-    <div class="footer-col brand-col">
-      <div class="footer-logo">
-        <img src="images/vl-logo-1.webp" alt="" srcset="">
-      </div>
-      <p>We foster a culture of teamwork &
-        creative problem-solving to deliver
-        exceptional results for our clients.</p>
-      <div class="social-icons">
-          <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-linkedin"></i></a>
-        <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="#"><i class="bi bi-youtube"></i></a>
-      </div>
-    </div>
-    <div class="footer-col links-col">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Service</a></li>
-        <li><a href="#">Case Study</a></li>
-        <li><a href="#">Testimonial</a></li>
-      </ul>
-    </div>
+            </div>
+            <p>We foster a culture of teamwork &
+                creative problem-solving to deliver
+                exceptional results for our clients.</p>
+            <div class="social-icons">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-col links-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Services.html">Our Service</a></li>
+                <li><a href="#">Case Study</a></li>
+                <li><a href="#">Testimonial</a></li>
+            </ul>
+        </div>
 
-    <div class="footer-col links-col">
-      <h3>Our Service</h3>
-      <ul>
-        <li><a href="#">Cyber Security</a></li>
-        <li><a href="#">Network Analysis</a></li>
-        <li><a href="#">Data Recovery</a></li>
-        <li><a href="#">It Service</a></li>
-      </ul>
-    </div>
+        <div class="footer-col links-col">
+            <h3>Our Service</h3>
+            <ul>
+                <li><a href="#">Cyber Security</a></li>
+                <li><a href="#">Network Analysis</a></li>
+                <li><a href="#">Data Recovery</a></li>
+                <li><a href="#">It Service</a></li>
+            </ul>
+        </div>
 
-    <div class="footer-col insta-col">
-      <h3>Instagram Post</h3>
-      <div class="insta-grid">
-        <div class="insta-item"><img src="assets/ins-1.webp" alt="Post 1"></div>
-        <div class="insta-item"><img src="./assets/ins-2.webp" alt="Post 2"></div>
-        <div class="insta-item"><img src="./assets/ins-3.webp" alt="Post 3"></div>
-        <div class="insta-item"><img src="./assets/ins-4.webp" alt="Post 4"></div>
-        <div class="insta-item"><img src="./assets/ins-5.webp" alt="Post 5"></div>
-        <div class="insta-item"><img src="./assets/ins-6.webp" alt="Post 6"></div>
-      </div>
-    </div>
-  </footer>
+        <div class="footer-col insta-col">
+            <h3>Instagram Post</h3>
+            <div class="insta-grid">
+                <div class="insta-item"><img src="assets/ins-1.webp" alt="Post 1"></div>
+                <div class="insta-item"><img src="./assets/ins-2.webp" alt="Post 2"></div>
+                <div class="insta-item"><img src="./assets/ins-3.webp" alt="Post 3"></div>
+                <div class="insta-item"><img src="./assets/ins-4.webp" alt="Post 4"></div>
+                <div class="insta-item"><img src="./assets/ins-5.webp" alt="Post 5"></div>
+                <div class="insta-item"><img src="./assets/ins-6.webp" alt="Post 6"></div>
+            </div>
+        </div>
+    </footer>
 
 
-  <footer class="bottom-footer">
-    <div class="bottom-footer-container">
-      <p>Copyright ©2024 O-Tech. All Rights Reserved</p>
-      <span>Terms & Conditions | Privacy Policy</span>
-    </div>
-  </footer>
+    <footer class="bottom-footer">
+        <div class="bottom-footer-container">
+            <p>Copyright ©2024 O-Tech. All Rights Reserved</p>
+            <span>Terms & Conditions | Privacy Policy</span>
+        </div>
+    </footer>
 
 
 
