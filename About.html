@@ -346,150 +346,151 @@
     }
 
     /* --- SECTION 7 (TEAM) --- */
-   
-.section-team {
-  background-color: #f4f5f8;
-  padding: 100px min(100px, 6%);
-}
 
-.team-title {
-  color: black;
-}
+    .section-team {
+      background-color: #f4f5f8;
+      padding: 100px min(100px, 6%);
+    }
 
-.team-title span {
-  background-color: #eae9f3;
-  color: #3b1baa;
-  text-transform: uppercase;
-  border-radius: 50px;
-  padding: 8px 12px;
-  font-size: 16px;
-  line-height: 16px;
-  display: inline-block;
-}
+    .team-title {
+      color: black;
+    }
 
-.team-title h1 {
-  font-size: clamp(24px, 4vw, 44px);
-  line-height: clamp(32px, 5vw, 52px);
-  margin: 0;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
-}
+    .team-title span {
+      background-color: #eae9f3;
+      color: #3b1baa;
+      text-transform: uppercase;
+      border-radius: 50px;
+      padding: 8px 12px;
+      font-size: 16px;
+      line-height: 16px;
+      display: inline-block;
+    }
 
-.image-card {
-  position: relative;
-}
+    .team-title h1 {
+      font-size: clamp(24px, 4vw, 44px);
+      line-height: clamp(32px, 5vw, 52px);
+      margin: 0;
+      padding-top: 1rem;
+      padding-bottom: 2rem;
+    }
 
-.team-img-wrapper {
-  position: relative;
-  border-radius: 8px;
-  width: 90%;
-  background-color: #f4f5f8;
-  transform: translateZ(0);
-  overflow: hidden;
-}
+    .image-card {
+      position: relative;
+    }
 
-.team-bg-lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-  border-radius: 8px;
-}
+    .team-img-wrapper {
+      position: relative;
+      border-radius: 8px;
+      width: 90%;
+      background-color: #f4f5f8;
+      transform: translateZ(0);
+      overflow: hidden;
+    }
 
-.lines-graphic {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: filter 0.4s ease, opacity 0.4s ease;
-  opacity: 0.25;
-  filter: grayscale(100%);
-}
+    .team-bg-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      border-radius: 8px;
+    }
 
-.image-card:hover .lines-graphic {
-  opacity: 1;
-  filter: grayscale(0%) sepia(100%) hue-rotate(210deg) saturate(600%) brightness(0.85);
-}
+    .lines-graphic {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: filter 0.4s ease, opacity 0.4s ease;
+      opacity: 0.25;
+      filter: grayscale(100%);
+    }
 
-.profile-photo {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  pointer-events: none;
-  transition: none;
-  filter: none;
-  mix-blend-mode: normal;
-  isolation: isolate;
-}
+    .image-card:hover .lines-graphic {
+      opacity: 1;
+      filter: grayscale(0%) sepia(100%) hue-rotate(210deg) saturate(600%) brightness(0.85);
+    }
 
-.team-social-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 15px;
-  width: 90%;
-  padding: 12px 10px;
-  box-sizing: border-box;
-  z-index: 3;
-  background: linear-gradient(135deg, rgba(61, 27, 175, 0.9), rgba(108, 99, 238, 0.9));
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transform: translateY(102%);
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  border-radius: 0 0 8px 8px;
-}
+    .profile-photo {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+      transition: none;
+      filter: none;
+      mix-blend-mode: normal;
+      isolation: isolate;
+    }
 
-.image-card:hover .team-social-overlay {
-  transform: translateY(0);
-}
+    .team-social-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+      width: 90%;
+      padding: 12px 10px;
+      box-sizing: border-box;
+      z-index: 3;
+      background: linear-gradient(135deg, rgba(61, 27, 175, 0.9), rgba(108, 99, 238, 0.9));
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transform: translateY(102%);
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      border-radius: 0 0 8px 8px;
+    }
 
-.social-icons-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-}
+    .image-card:hover .team-social-overlay {
+      transform: translateY(0);
+    }
 
-.social-icons-row a {
-  background-color: rgba(255, 255, 255, 0.2);
-  height: 44px;
-  width: 44px;
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 18px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+    .social-icons-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+    }
 
-.social-icons-row a:hover {
-  background-color: #ffffff;
-  color: #3b1baa;
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
+    .social-icons-row a {
+      background-color: rgba(255, 255, 255, 0.2);
+      height: 44px;
+      width: 44px;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 18px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
 
-.image-card h2 {
-  color: black;
-  text-align: center;
-  font-size: clamp(20px, 2.5vw, 24px);
-  margin-top: 20px;
-  font-weight: 700;
-}
+    .social-icons-row a:hover {
+      background-color: #ffffff;
+      color: #3b1baa;
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
 
-.image-card p {
-  font-size: clamp(16px, 1.5vw, 18px);
-  color: black;
-  text-align: center;
-  opacity: 0.7;
-  margin-top: 5px;
-}
+    .image-card h2 {
+      color: black;
+      text-align: center;
+      font-size: clamp(20px, 2.5vw, 24px);
+      margin-top: 20px;
+      font-weight: 700;
+    }
+
+    .image-card p {
+      font-size: clamp(16px, 1.5vw, 18px);
+      color: black;
+      text-align: center;
+      opacity: 0.7;
+      margin-top: 5px;
+    }
+
     .group:hover .group-hover\:bg-brand {
       background-color: #3D1BAF !important;
     }
@@ -944,7 +945,7 @@
   <!-- Header -->
   <header class="header">
     <nav class="navbar">
-      <img src="images/vl-logo-1.1.webp" alt="Logo">
+      <a href="index.html"><img src="images/vl-logo-1.1.webp" alt="Logo"></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="About.html">About Us</a></li>
@@ -1428,94 +1429,94 @@
   </section>
 
   <!-- SECTION 5-->
- <section class="section-team">
-  <div class="team-title">
-    <span>Our Team</span>
-    <h1>Dedicated Professionals, <br> Proven Results</h1>
-  </div>
-
-  <div class="owl-carousel four-cards">
-
-    <div class="image-card">
-      <div class="team-img-wrapper">
-        <div class="team-bg-lines">
-          <img src="images/lines.svg" alt="" class="lines-graphic">
-        </div>
-        
-        <img src="images/secH1.webp" alt="Kandra Cremin" class="profile-photo">
-        
-        <div class="team-social-overlay">
-          <div class="social-icons-row">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-          </div>
-        </div>
-      </div>
-      <h2>Kandra Cremin</h2>
-      <p>Network Engineer</p>
+  <section class="section-team">
+    <div class="team-title">
+      <span>Our Team</span>
+      <h1>Dedicated Professionals, <br> Proven Results</h1>
     </div>
 
-    <div class="image-card">
-      <div class="team-img-wrapper">
-        <div class="team-bg-lines">
-          <img src="images/lines.svg" alt="" class="lines-graphic">
-        </div>
-        <img src="images/secH2.webp" alt="Jack Williamson" class="profile-photo">
-        <div class="team-social-overlay">
-          <div class="social-icons-row">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+    <div class="owl-carousel four-cards">
+
+      <div class="image-card">
+        <div class="team-img-wrapper">
+          <div class="team-bg-lines">
+            <img src="images/lines.svg" alt="" class="lines-graphic">
+          </div>
+
+          <img src="images/secH1.webp" alt="Kandra Cremin" class="profile-photo">
+
+          <div class="team-social-overlay">
+            <div class="social-icons-row">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
           </div>
         </div>
+        <h2>Kandra Cremin</h2>
+        <p>Network Engineer</p>
       </div>
-      <h2>Jack Williamson</h2>
-      <p>Digital Marketer</p>
-    </div>
 
-    <div class="image-card">
-      <div class="team-img-wrapper">
-        <div class="team-bg-lines">
-          <img src="images/lines.svg" alt="" class="lines-graphic">
-        </div>
-        <img src="images/secH3.webp" alt="Dannis Jacobson" class="profile-photo">
-        <div class="team-social-overlay">
-          <div class="social-icons-row">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      <div class="image-card">
+        <div class="team-img-wrapper">
+          <div class="team-bg-lines">
+            <img src="images/lines.svg" alt="" class="lines-graphic">
+          </div>
+          <img src="images/secH2.webp" alt="Jack Williamson" class="profile-photo">
+          <div class="team-social-overlay">
+            <div class="social-icons-row">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
           </div>
         </div>
+        <h2>Jack Williamson</h2>
+        <p>Digital Marketer</p>
       </div>
-      <h2>Dannis Jacobson</h2>
-      <p>CEO & Founder</p>
-    </div>
 
-    <div class="image-card">
-      <div class="team-img-wrapper">
-        <div class="team-bg-lines">
-          <img src="images/lines.svg" alt="" class="lines-graphic">
-        </div>
-        <img src="images/secH4.webp" alt="Patricia Wilkinson" class="profile-photo">
-        <div class="team-social-overlay">
-          <div class="social-icons-row">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      <div class="image-card">
+        <div class="team-img-wrapper">
+          <div class="team-bg-lines">
+            <img src="images/lines.svg" alt="" class="lines-graphic">
+          </div>
+          <img src="images/secH3.webp" alt="Dannis Jacobson" class="profile-photo">
+          <div class="team-social-overlay">
+            <div class="social-icons-row">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
           </div>
         </div>
+        <h2>Dannis Jacobson</h2>
+        <p>CEO & Founder</p>
       </div>
-      <h2>Patricia Wilkinson</h2>
-      <p>Digital Marketer</p>
-    </div>
 
-  </div>
-</section>
+      <div class="image-card">
+        <div class="team-img-wrapper">
+          <div class="team-bg-lines">
+            <img src="images/lines.svg" alt="" class="lines-graphic">
+          </div>
+          <img src="images/secH4.webp" alt="Patricia Wilkinson" class="profile-photo">
+          <div class="team-social-overlay">
+            <div class="social-icons-row">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <h2>Patricia Wilkinson</h2>
+        <p>Digital Marketer</p>
+      </div>
+
+    </div>
+  </section>
 
   <section class="w-full relative bg-gray-50 py-16 mb-[10rem] overflow-x-hidden ">
 
